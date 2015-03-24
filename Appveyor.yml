@@ -1,11 +1,10 @@
-Enter file contents here
 install:  
      - cinst pester 
- 
- 
+
+
 build: false 
- 
- 
+
+
 test_script: 
      - ps: | 
          $testResultsFile = ".\TestsResults.xml" 
@@ -14,7 +13,7 @@ test_script:
          if ($res.FailedCount -gt 0) {  
              throw "$($res.FailedCount) tests failed." 
          } 
-  
+
  on_finish: 
     - ps: | 
      ls '.\Add-Numbers.ps1' | % { Push-AppveyorArtifact $_ -FullName $_.FullName} 
