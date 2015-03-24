@@ -16,4 +16,4 @@ test_script:
 
 on_finish: 
     - ps: | 
-        ls '.\Add-Numbers.ps1' | % { Push-AppveyorArtifact $_ -FullName $_.FullName} 
+        #ls '.\Add-Numbers.ps1' | % { Push-AppveyorArtifact $_.FullName -FullName $_.Name} 
